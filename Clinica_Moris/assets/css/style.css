@@ -1,0 +1,539 @@
+/* ============================================
+   RESET GLOBAL
+============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ============================================
+   HEADER / NAVBAR
+============================================ */
+.landing-header {
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.landing-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 110px;
+    width: auto;
+}
+
+/* Menú principal */
+.main-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #222;
+    font-weight: 500;
+}
+
+.main-nav a:hover {
+    color: #007bff;
+}
+
+/* Botones Login / Registro */
+.auth-links {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-login {
+    padding: 8px 15px;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    background: white;
+    color: #007bff;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.btn-login:hover {
+    background: #007bff;
+    color: white;
+}
+
+.btn-register {
+    padding: 8px 15px;
+    border-radius: 6px;
+    background: #007bff;
+    color: white !important;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.btn-register:hover {
+    background: #005ac8;
+}
+
+/* ============================================
+   DASHBOARD / PANEL DE USUARIO
+============================================ */
+
+/* Contenedor general */
+.container {
+    display: flex;
+    min-height: 100vh;
+    background: #f0f4fa;
+}
+
+/* ============================================
+   SIDEBAR
+============================================ */
+.sidebar {
+    width: 240px;
+    background: #0a74ff;
+    color: white;
+    padding: 35px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    font-size: 17px;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+.sidebar .logout {
+    margin-top: auto;
+    background: #ff4b4b !important;
+}
+
+.sidebar .logout:hover {
+    background: #d63838 !important;
+}
+
+/* ============================================
+   CONTENIDO
+============================================ */
+.content {
+    flex: 1;
+    padding: 40px 50px;
+}
+
+.content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #1c1c1c;
+}
+
+/* ============================================
+   CARDS PRINCIPALES
+============================================ */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    transition: 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* ============================================
+   QUICK LINKS (BOTONES GRANDES)
+============================================ */
+.quick-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.qbtn {
+    background: #0a74ff;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.qbtn:hover {
+    background: #005ad4;
+}
+
+/* Botón de descarga */
+.card .btn {
+    display: inline-block;
+    padding: 10px 14px;
+    background: #0a74ff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.card .btn:hover {
+    background: #005ad4;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .content {
+        padding: 25px;
+    }
+}
+
+/* ============================================
+   HERO / LANDING-MAIN (SIN IMAGEN)
+============================================ */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 45vh;
+    background: url('../img/Tipico.jpg') center top/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+}
+
+.hero-content {
+    position: relative;
+    color: white;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    padding: 12px 25px;
+    background: #0a74ff;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: #005ad4;
+}
+
+
+/* ============================================
+   SECCIONES GENERALES
+============================================ */
+.section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+}
+
+.section-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* ============================================
+   SOBRE NOSOTROS
+============================================ */
+.about {
+    background: white;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text {
+    text-align: left;
+}
+
+.about-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.about-text ul li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.about-img img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* Responsive Sobre Nosotros */
+@media (max-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* ============================================
+   CONTACTO
+============================================ */
+.contact-section {
+    background: #f5f7fa;
+    padding: 60px 20px;
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 60px 20px;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+.whatsapp-btn:hover {
+    background: #1cab54;
+}
+
+/* Formulario */
+.contact-form {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.contact-form textarea {
+    height: 120px;
+}
+
+.contact-form button {
+    padding: 12px;
+    background: #0a74ff;
+    color: white;
+    border-radius: 6px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.contact-form button:hover {
+    background: #005ad4;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+}
+
+/* Responsive Contacto */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   FOOTER
+============================================ */
+.footer {
+    background: #0a0a0a;
+    color: #ddd;
+    padding: 40px 20px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.footer-links a {
+    color: #bbb;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-copy {
+    margin-top: 20px;
+    color: #666;
+}
+
+/* ============================================
+   LOGIN
+============================================ */
+.login-page {
+    background: #eef5ff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.login-box {
+    background: white;
+    width: 350px;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.18);
+    text-align: center;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #b9c7d5;
+    border-radius: 8px;
+}
+
+.login-box .logo {
+    width: 110px;
+    margin-bottom: 15px;
+    
+}
